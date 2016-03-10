@@ -9,6 +9,12 @@ var path = "/media/pi/01D16F03D7563070/movies";
 
 app.use(express['static'](__dirname ));
 
+exec("sudo /sbin/ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{print $1}'", function(error, stdout, stderr){
+	ip = stdout;
+			exports.ipAdd = ip;
+			console.log(ip);
+});
+
 app.get('/files', function(req, res) {
 	fs.readdir(path, function(err, files) {
 		if (err){
