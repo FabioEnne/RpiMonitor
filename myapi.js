@@ -2,6 +2,7 @@ var http = require('http');
 var express = require('express');
 var app = express();
 var exec = require('child_process').exec, child;
+var ip
 var fs = require('fs');
 var jUptime;
 var filesD = [];
