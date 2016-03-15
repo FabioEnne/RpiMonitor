@@ -24,7 +24,7 @@
 
 <hr>
 
-<p><img style="position: relative; left: 33%; width: 150px;" src="http://www.glassblower.info/blog/wp-content/uploads/2013/04/raspberry-pi-logo-300-pixels.png" alt=""></p>
+<p><img src="http://www.glassblower.info/blog/wp-content/uploads/2013/04/raspberry-pi-logo-300-pixels.png" alt=""></p>
 
 <blockquote>
 <p>Easy control is the real power</p>
@@ -38,6 +38,37 @@
 <a id="your-rpi-at-a-glance" class="anchor" href="#your-rpi-at-a-glance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Your Rpi at a glance</h3>
 
 <p>The goal we are trying to achive via the development of this WebApp is to let you easily see your Rpi Status and usage, kill the process you don't need, manage your files everything from your fingertips, those are the first features we want to implement! Many othere features can be thinked and implemented in the future, this is the power of the open surce! Feel free to create a new branch and help us out!!</p>
+
+<hr>
+
+<h4>
+<a id="note" class="anchor" href="#note" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NOTE:</h4>
+
+<p>This project is still on a development stage, many things or features can change in the future! Feel free to contribute by committing changes in the "contributors" branch.
+This webApp has been created and tested only on Raspberry Pi 2 running Raspbian "Jessie" no other distros or platforms has been tested yet.</p>
+
+<h4>
+<a id="install--usage" class="anchor" href="#install--usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INSTALL &amp; USAGE:</h4>
+
+<ul>
+<li>Download and save to any folder all the files and folders in the master branch and put it all togheter in a new folder (call that folder as you like).</li>
+<li>Install NodeJS 
+Start by getting the URL to the pre-built binaries you want to install. The latest version can be found at <a href="http://nodejs.org/download/">http://nodejs.org/download/</a>
+Click “Other release files” and get the URL of the packages. Download the Node tar file you identified above using wget, then go to the /user/local directory and unpack the tar file there, as shown in the following steps:
+<code>$wget <a href="http://nodejs.org/dist/v0.8.21/node-v0.8.21-linux-arm-pi.tar.gz">http://nodejs.org/dist/v0.8.21/node-v0.8.21-linux-arm-pi.tar.gz</a></code> 
+than:
+<code>$cd /usr/local</code> 
+and:
+<code>$sudo tar xzvf ~/node-v0.8.21-linux-arm-pi.tar.gz --strip=1</code>
+</li>
+<li>Navigate to the project directory (<code>cd /xxx/xxx</code>)</li>
+<li><p>Install the required node modules:
+<code>$npm install express</code></p></li>
+<li><p>In the clientSide foldere change all the REST call in js files whit your local IP addess (This step is crucial to make all the system work) NOTE: ####This steps is because I couldn't find a solution to automatically pass the internal IP address to all the REST calls.</p></li>
+<li><p>Run the server by typing <code>$cd xxx/xxx/serverSide</code></p></li>
+<li><code>$node myapi.js</code></li>
+<li>Open your favorite Web Browser and navigate to <code>http://xxxx:3000</code> where xxx is your local Ip Address.</li>
+</ul>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/FabioEnne/RpiMonitor">Rpi Control Panel</a> is maintained by <a href="https://github.com/FabioEnne">FabioEnne</a>.</span>
